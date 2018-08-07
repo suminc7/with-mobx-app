@@ -1,31 +1,10 @@
 import React from 'react'
-import { observable } from 'mobx'
-import { observer } from 'mobx-react'
+import Page from '../components/Page'
 
-class CounterContainer {
-    @observable count = 0
-}
-
-const store = new CounterContainer();
-
-@observer
-class Counter extends React.Component {
-    render() {
-        return (
-            <div>
-                <button onClick={() => store.count--}>-</button>
-                { store.count }
-                <button onClick={() => store.count++}>+</button>
-            </div>
-        )
-    }
-}
-
-
-export default class Index extends React.Component {
+export default class Counter extends React.Component {
   render () {
     return (
-      <Counter/>
+      <Page title='Index Page' linkTo='/other' />
     )
   }
 }
